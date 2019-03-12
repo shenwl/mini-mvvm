@@ -5,7 +5,7 @@ const observe = (data) => {
     const val = data[key];
     Object.defineProperty(data, key, {
       enumerable: true,
-      configrable: true,
+      configurable: true,
       get: function () {
         console.log(`key-name: ${key}: val`);
         return val;
