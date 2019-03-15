@@ -15,7 +15,4 @@ const vm = new Vue({
   }
 });
 
-// setTimeout(() => {
-//   vm.$data.age++;
-// }, 3000);
 
