@@ -1,5 +1,5 @@
 import observe from './observe';
-import Compile from './compile'
+import Compile from './compile';
 
 export default class Vue {
   constructor(options) {
@@ -12,6 +12,10 @@ export default class Vue {
     const {el, data, methods} = options;
     this.$el = document.querySelector(el);
     this.$data = data;
-    this.$methods = methods;
+    this.$methods = {};
+
+    Object.keys(methods).forEach(methodName => {
+      this.$methods[methodName] = methods[methodName].bind(this);
+    });
   }
 }
