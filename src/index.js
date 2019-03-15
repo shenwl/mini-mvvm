@@ -1,13 +1,15 @@
-import observe from './libs/observe';
-import Observer from './libs/observer';
-import Subject from './libs/subject';
+import Vue from './libs/vue';
 
-const subject1 = new Subject();
 
-const observer1 = new Observer('hunger', () => {
-  console.log('hunger update')
+const vm = new Vue({
+  el: '#root',
+  data: {
+    name: 'Allen',
+    age: 2
+  }
 });
 
-observer1.subscribeTo(subject1)
+setInterval(() => {
+  vm.$data.age++;
+}, 1000);
 
-subject1.notify();
