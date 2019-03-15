@@ -12,14 +12,14 @@ const observe = (data) => {
       configurable: true,
       get: function () {
         if (helper.currentObserver) {
-          console.log('currentObserver added');
+          // console.log('currentObserver added');
           helper.currentObserver.subscribeTo(subject);
         }
         return val;
       },
       set: function (newVal) {
         val = newVal;
-        console.log('when set, notify');
+        // console.log('when set, notify');
         subject.notify();
       }
     });

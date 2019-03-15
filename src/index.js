@@ -6,6 +6,11 @@ const vm = new Vue({
   data: {
     name: 'Allen',
     age: 25
+  },
+  methods: {
+    handlePrint() {
+      console.log('-----print-----')
+    }
   }
 });
 

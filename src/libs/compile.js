@@ -20,14 +20,11 @@ export default class Compile {
   bindModel(node, attr) {
     const key = attr.value;
     node.value = this.vm.$data[key];
-    console.log(this.vm.$data, key)
-    console.log(this.vm)
     new Observer(this.vm, key, (newVal) => {
       node.value = newVal;
     });
 
     node.oninput = e => {
-      console.log(this.vm.$data);
       this.vm.$data[key] = e.target.value;
     };
   }
