@@ -9,7 +9,9 @@ export default class Observer {
     this.vm = vm;
     this.key = key;
     this.callback = callback;
+    this.subjects = [];
     this.value = this.getValue();
+
     this.subscribeTo = this.subscribeTo.bind(this);
   }
 
@@ -33,6 +35,8 @@ export default class Observer {
     if (!(subject instanceof Subject)) {
       return console.warn('must subscribe to a Subject instance');
     }
+    if(this.subjects.includes(subject)) return;
+    this.subjects.push(subject);
     subject.addObserver(this);
   }
 }
