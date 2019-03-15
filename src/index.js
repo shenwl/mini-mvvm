@@ -5,11 +5,11 @@ const vm = new Vue({
   el: '#root',
   data: {
     name: 'Allen',
-    age: 2
+    age: 25
   }
 });
 
-setInterval(() => {
-  vm.$data.age++;
-}, 1000);
+// setTimeout(() => {
+//   vm.$data.age++;
+// }, 3000);
 

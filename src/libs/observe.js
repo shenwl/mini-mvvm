@@ -11,7 +11,6 @@ const observe = (data) => {
       enumerable: true,
       configurable: true,
       get: function () {
-        console.log(`key-name: ${key}: val`);
         if (helper.currentObserver) {
           console.log('currentObserver added');
           helper.currentObserver.subscribeTo(subject);
@@ -20,7 +19,7 @@ const observe = (data) => {
       },
       set: function (newVal) {
         val = newVal;
-        console.log('notify val:', newVal);
+        console.log('when set, notify');
         subject.notify();
       }
     });
