@@ -10,7 +10,7 @@ const vm = new Vue({
   methods: {
     handlePrint() {
       console.log(this.$data.name);
-      console.log('-----print-----')
+      console.log('-----print-----');
     }
   }
 });
